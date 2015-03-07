@@ -3,8 +3,8 @@
     <h1>Links</h1>
     <a href="#/shorten">Shorten</a>
     <form name="linkForm" ng-submit="addLink(linkForm.$valid)" novalidate>
-      <input type="url" ng-model="newLink" required />
-<!--       <p ng-show="linkForm.url.$invalid">Please enter a valid URL.</p> -->
+      <input type="url" name="url" ng-model="newLink" required />
+      <p class="error" ng-show="linkForm.url.$error.url">Please enter a valid URL.</p>
       <button type="submit" ng-disabled="linkForm.$invalid">Add</button>
     </form>
     <ul>
