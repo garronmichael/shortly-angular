@@ -4,8 +4,9 @@
     <h1>Shorten</h1>
     <a href="#/links">Links</a>
     <div ng-model="data.links">
+    <input ng-model="searchText">
       <ul>
-      <li ng-repeat="link in data.links | orderBy:predicate"><a href={{link.shortUrl}}>{{link.title}} - {{link.shortUrl}} - {{link.visits}}</a></li>
+      <li ng-repeat="link in data.links | orderBy:predicate | filter:searchText"><a href={{link.shortUrl}}>{{link.title}} - {{link.shortUrl}} - {{link.visits}}</a></li>
     </ul>
     </div>
   </div>
