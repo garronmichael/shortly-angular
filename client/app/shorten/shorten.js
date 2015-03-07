@@ -2,7 +2,7 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
   $scope.data = {};
-
+  $scope.predicate = '-visits';
   $scope.getLinks = function(){
     Links.getLinks()
       .then(function(data) {
