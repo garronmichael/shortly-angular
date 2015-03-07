@@ -1,8 +1,12 @@
 <div id='container'>
   <div ng-controller="LinksController">
     <h1>Links</h1>
-    <input ng-model="newLink" />
-    <button ng-click="addLink(newLink)">Add</button>
+    <a href="#/shorten">Shorten</a>
+    <form name="linkForm" ng-submit="addLink(linkForm.$valid)" novalidate>
+      <input type="url" ng-model="newLink" required />
+<!--       <p ng-show="linkForm.url.$invalid">Please enter a valid URL.</p> -->
+      <button type="submit" ng-disabled="linkForm.$invalid">Add</button>
+    </form>
     <ul>
       <li ng-repeat="link in data.links">{{link}}</li>
     </ul>
