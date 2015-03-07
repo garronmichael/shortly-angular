@@ -3,7 +3,7 @@ angular.module('shortly.links', [])
 .controller('LinksController', function ($scope, Links) {
   // Your code here
   $scope.data = {};
-  $scope.newLink = {};
+  $scope.data.links = [];
 
   $scope.getLinks = function(){
     Links.getLinks()
@@ -17,13 +17,14 @@ angular.module('shortly.links', [])
 
   $scope.getLinks();
 
-  $scope.addLinks = function(){
-    Links.addLinks($scope.newLink)
+  $scope.addLink = function(){
+    Links.addLink($scope.data)
     .then(function(data){
-      $scope.newLink = data;
+      console.log(data);
+      $scope.data.links.push(data);
     })
     .catch(function(error){
-      console.error(error);
+      console.error("Link error: ", error);
     });
   };
 
