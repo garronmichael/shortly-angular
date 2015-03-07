@@ -5,7 +5,7 @@
     <a href="#/links">Links</a>
     <div ng-model="data.links">
       <ul>
-      <li ng-repeat="link in data.links">{{link.code}}</li>
+      <li ng-repeat="link in data.links"><a href={{link.shortUrl}}>{{link.title}} - {{link.shortUrl}}</a></li>
     </ul>
     </div>
   </div>
