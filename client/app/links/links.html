@@ -1,3 +1,9 @@
 <div id='container'>
-  <!-- Your html here -->
+  <div ng-controller="LinksController">
+    <h1>Links</h1>
+    <input ng-model="newLink" />
+    <button ng-click="addLink(newLink)">Add</button>
+    <ul>
+      <li ng-repeat="link in data.links">{{link}}</li>
+    </ul>
 </div>
