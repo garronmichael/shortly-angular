@@ -39,13 +39,13 @@ angular.module('shortly', [
       url: '/signup',
       templateUrl: 'app/auth/signup.html'
     })
-    .state('links', {
-      url: '/links',
-      templateUrl: 'app/links/links.html'
-    })
-    .state('links.shorten', {
+    .state('shorten', {
       url: '/shorten',
       templateUrl: 'app/shorten/shorten.html'
+    })
+    .state('shorten.links', {
+      url: '/links',
+      templateUrl: 'app/links/links.html'
     })
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls

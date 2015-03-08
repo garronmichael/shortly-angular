@@ -1,15 +1,10 @@
-<div id='container'>
-  <div ng-controller="ShortenController">
-    <h1 alert-function>Shorten</h1>
+  <div>
+    <h1>Shorten</h1>
     <form name="linkForm" ng-submit="addLink()" novalidate>
       <input type="url" name="url" ng-model="data.url" required ng-class="{error: linkForm.$invalid && linkForm.$dirty}">
       <p class="error" ng-show="linkForm.url.$error.url">Please enter a valid URL.</p>
       <button type="submit" ng-disabled="linkForm.$invalid">Add</button>
     </form>
-   <a ui-sref="shorten.links">Show links</a>
-   <div ui-view></div>
-
-<!-- <div ui-view></div>
- <shorten-link source="link"></shorten-link> -->
- </div>
+    <a ui-sref="links.shorten">Show links</a>
+    <div ui-view></div>
 </div>

@@ -1,12 +1,14 @@
 <div id='container'>
+
   <div ng-controller="LinksController">
     <h1>Links</h1>
-    <form name="linkForm" ng-submit="addLink()" novalidate>
-      <input type="url" name="url" ng-model="data.url" required />
-      <p class="error" ng-show="linkForm.url.$error.url">Please enter a valid URL.</p>
-      <button type="submit" ng-disabled="linkForm.$invalid">Add</button>
-    </form>
-    <a ui-sref="links.shorten">Show links</a>
-    <div ui-view></div>
-
+    <div ng-model="data.links">
+    <input ng-model="searchText">
+      <ul>
+      <li ng-repeat="link in data.links | orderBy:predicate | filter:searchText"><a href={{link.shortUrl}}>{{link.title}} - {{link.shortUrl}} - {{link.visits}}</a></li>
+    </ul>
+    </div>
+  </div>
 </div>
+
+
